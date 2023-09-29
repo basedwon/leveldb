@@ -47,12 +47,27 @@ const LevelDB = require('@plaindb/leveldb')
 You can initialize a LevelDB instance as follows:
 
 ```js
-// db
 const db = new LevelDB({
-  dbName: 'yourDBName',
-  dbPrefix: 'yourDBPrefix'
+  dbName: 'myDatabase',
+  dbPrefix: 'prefix',
+  reset: true,
+  separator: '!',
+  keyEncoding: 'utf8',
+  valueEncoding: 'msgpack'
 })
 ```
+
+### Constructor Options
+
+When instantiating a `LevelDB` object, you can pass an options object as follows:
+
+- **`dbName`**: (string) The name of the LevelDB database. Default is `'.db'`.
+- **`dbPrefix`**: (string) A prefix to be used before the dbName. Default is `''` (empty string).
+- **`client`**: (object) Custom Level client. If not provided, a new Level client will be created.
+- **`reset`**: (boolean) If `true`, clears the database on instantiation. Default is `false`.
+- **`separator`**: (string) The separator used for key names. Default is `'!'`.
+- **`keyEncoding`**: (string | object) Encoding for keys. Default is `'utf8'`.
+- **`valueEncoding`**: (string | object) Encoding for values. Default is `'msgpack'`.
 
 ### Putting Data
 
@@ -145,94 +160,3 @@ Thank you! Please see our [contributing guidelines](/docs/contributing.md) for d
 ## License
 
 LevelDB is [MIT licensed](https://gitlab.com/frenware/framework/plaindb/leveldb/-/blob/master/LICENSE).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Certainly! Here's the README portion documenting the various options for your `LevelDB` wrapper:
-
-```markdown
-## Options for LevelDB Wrapper
-
-### Constructor Options
-
-When instantiating a `LevelDB` object, you can pass an options object as follows:
-
-```javascript
-const leveldb = new LevelDB({
-  dbName: 'myDatabase',
-  dbPrefix: 'prefix',
-  client: customLevelClient,
-  reset: true,
-  separator: '#',
-  keyEncoding: 'utf8',
-  valueEncoding: 'msgpack'
-})
-```
-
-- **`dbName`**: (string) The name of the LevelDB database. Default is `'plain'`.
-- **`dbPrefix`**: (string) A prefix to be used before the dbName. Default is `''` (empty string).
-- **`client`**: (object) Custom Level client. If not provided, a new Level client will be created.
-- **`reset`**: (boolean) If `true`, clears the database on instantiation. Default is `false`.
-- **`separator`**: (string) The separator used for key names. Default is `'!'`.
-- **`keyEncoding`**: (string | object) Encoding for keys. Default is `'utf8'`.
-- **`valueEncoding`**: (string | object) Encoding for values. Default is `'msgpack'`.
-
-### Method Options
-
-#### `put(key, value, opts)`
-
-- **`key`**: (string) The key where you want to store the data.
-- **`value`**: (any) The value you want to store.
-- **`opts`**: Additional options passed to LevelDB's `.put()` method.
-
-#### `get(key, opts)`
-
-- **`key`**: (string) The key to fetch from the database.
-- **`opts`**: Additional options passed to LevelDB's `.get()` method.
-
-#### `del(key, opts)`
-
-- **`key`**: (string) The key to delete from the database.
-- **`opts`**: Additional options passed to LevelDB's `.del()` method.
-
-#### `createReadStream(opts)`, `createKeyStream(opts)`, `createValueStream(opts)`
-
-- **`opts`**: Options for controlling the read stream.
-- **`opts.all`**: (boolean) If `true`, includes all child keys in the stream.
-
-#### `exists(key)`
-
-- **`key`**: (string) The key to check existence in the database.
-
-#### `iterator(opts)`
-
-- **`opts`**: Options for controlling the iterator.
-- **`opts.all`**: (boolean) If `true`, includes all child keys in the iterator.
-
-#### `batch(ops)`
-
-- **`ops`**: (array) An array of operations to be executed as a batch.
-
-#### `collect(type, opts)`
-
-- **`type`**: (string) The type of stream to collect from (`read`, `key`, `value`).
-- **`opts`**: Options to control the behavior of the stream.
-```
-
-This documentation should cover all available options for your `LevelDB` wrapper class.
-```
-
-Feel free to adjust the documentation as necessary!
-
