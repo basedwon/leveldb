@@ -1,0 +1,57 @@
+{
+  "name": "@plaindb/leveldb",
+  "version": "0.0.0",
+  "description": "A wrapper around LevelDB for both server-side and client-side JS",
+  "author": "Basedwon <basedwon@protonmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basedwon/leveldb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/basedwon/leveldb/issues"
+  },
+  "homepage": "https://github.com/basedwon/leveldb#readme",
+  "main": "lib/level-db.js",
+  "browser": {
+    ".": "./lib/level-db.js"
+  },
+  "scripts": {
+    "dev:test": "nodemon -w ../.. -x npm test",
+    "dev": "nodemon -w ../.. test/leveldb.test.js",
+    "update": "npm run update:prod && npm run update:dev",
+    "update:prod": "npm i -S basd@latest @basd/nested@latest @plaindb/storage@latest",
+    "update:dev": "npm i -D @basd/testr@latest",
+    "docs": "jsdoc2md lib/*.js > docs/api.md",
+    "test": "testr test"
+  },
+  "dependencies": {
+    "@basd/nested": "^0.0.0",
+    "@plaindb/storage": "^0.0.0",
+    "basd": "^1.0.9",
+    "level": "^8.0.0",
+    "level-read-stream": "^1.1.0"
+  },
+  "devDependencies": {
+    "@basd/testr": "^0.1.1",
+    "jsdoc": "^4.0.2",
+    "jsdoc-to-markdown": "^8.0.0"
+  },
+  "keywords": [
+    "leveldb",
+    "database",
+    "key-value",
+    "storage",
+    "nodejs",
+    "stream",
+    "async",
+    "singleton",
+    "batch",
+    "sublevel",
+    "encoding",
+    "decoding",
+    "evented",
+    "datastore",
+    "persistence"
+  ]
+}
