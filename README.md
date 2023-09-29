@@ -143,7 +143,7 @@ In order to run the test suite, simply clone the repository and install its depe
 
 ```bash
 git clone https://gitlab.com/frenware/framework/plaindb/leveldb.git
-cd leveldb
+cd basd
 npm install
 ```
 
@@ -157,6 +157,21 @@ npm test
 
 Thank you! Please see our [contributing guidelines](/docs/contributing.md) for details.
 
+## Donations
+
+If you find this project useful and want to help support further development, please send us some coin. We greatly appreciate any and all contributions. Thank you!
+
+**Bitcoin (BTC):**
+```
+1JUb1yNFH6wjGekRUW6Dfgyg4J4h6wKKdF
+```
+
+**Monero (XMR):**
+```
+46uV2fMZT3EWkBrGUgszJCcbqFqEvqrB4bZBJwsbx7yA8e2WBakXzJSUK8aqT4GoqERzbg4oKT2SiPeCgjzVH6VpSQ5y7KQ
+```
+
 ## License
 
-LevelDB is [MIT licensed](https://gitlab.com/frenware/framework/plaindb/leveldb/-/blob/master/LICENSE).
+@plaindb/leveldb is [MIT licensed](https://gitlab.com/frenware/framework/plaindb/leveldb/-/blob/master/LICENSE).
+
