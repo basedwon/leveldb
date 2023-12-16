@@ -1,6 +1,6 @@
 {
   "name": "@plaindb/leveldb",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A wrapper around LevelDB for both server-side and client-side JS",
   "author": "Basedwon <basedwon@protonmail.com>",
   "license": "MIT",
